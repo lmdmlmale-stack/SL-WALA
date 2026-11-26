@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "the-lighthouse",
+    "title": "The Lighthouse",
+    "category": "Fiction",
+    "date": "2026-11-27",
+    "thumb": "images/lighthouse.jpg",
+    "excerpt": "A keeper hears something in the fog that shouldn't be there.",
+    "body": "The first night, the fog came in thick and silent.\n\nBy the second night, the light had stopped turning.\n\nBy the third, I understood why."
+  },
+  {
+    "slug": "notes-from-the-road",
+    "title": "Notes From the Road",
+    "category": "Travel",
+    "date": "2026-11-20",
+    "thumb": "images/road.jpg",
+    "excerpt": "Three weeks, one bag, no plan.",
+    "body": "I left on a Tuesday with no map and a broken radio.\n\nThat turned out to be the best decision of the trip."
+  }
+]
