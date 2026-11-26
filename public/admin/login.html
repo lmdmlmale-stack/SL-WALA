@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Sign in</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body data-page="admin-login">
+
+  <div class="login-wrap">
+    <div class="login-card">
+      <a class="brand" href="/" style="margin-bottom:22px"><span class="dot"></span> Gallery</a>
+      <h1>Administrator sign in</h1>
+      <p class="sub">Only administrators can upload or manage media.</p>
+
+      <div class="alert" id="alert"></div>
+
+      <form id="login-form" autocomplete="on">
+        <div class="field">
+          <label for="username">Username</label>
+          <input class="input" id="username" name="username" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input class="input" id="password" name="password" type="password"
+                 autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Sign in</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

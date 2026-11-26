@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Home</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="home">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/"><span class="dot"></span> Gallery</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/videos">Videos</a>
+        <a href="/photos">Photos</a>
+      </nav>
+      <div class="search">
+        <input type="search" placeholder="Search…" data-global-search aria-label="Search">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>A private, locally hosted media library.</h1>
+      <p>
+        Everything you publish appears here automatically. Files live in the
+        <code>uploads/</code> folder on this machine — nothing leaves your computer.
+      </p>
+      <a class="btn btn-primary" href="/videos">Browse videos</a>
+      <a class="btn btn-ghost" href="/photos" style="margin-left:8px">Browse photos</a>
+    </section>
+
+    <div class="section-title">
+      <h2>Recently added</h2>
+      <a href="/videos">See all &rarr;</a>
+    </div>
+    <div class="grid" id="grid"></div>
+
+    <div class="section-title">
+      <h2>Categories</h2>
+    </div>
+    <div class="chips" id="categories"></div>
+  </main>
+
+  <footer class="site-footer">
+    Local media gallery &middot; All content stored on this machine
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/gallery.js"></script>
+</body>
+</html>

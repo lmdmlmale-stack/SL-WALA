@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body data-page="admin-dashboard">
+
+  <div class="admin-shell" id="dashboard">
+
+    <aside class="admin-side">
+      <a class="brand" href="/"><span class="dot"></span> Gallery</a>
+      <button class="tab-btn active" data-tab="video">Upload video</button>
+      <button class="tab-btn" data-tab="photos">Upload photos</button>
+      <button class="tab-btn" data-tab="library">Manage library</button>
+      <button class="tab-btn" id="logout-btn" style="margin-top:auto">Sign out</button>
+    </aside>
+
+    <main class="admin-main">
+      <h1>Dashboard</h1>
+      <p class="sub">Published media appears on the public site immediately.</p>
+
+      <div class="alert" id="alert"></div>
+
+      <!-- ---------------- Video upload ---------------- -->
+      <section class="tab-panel" data-panel="video">
+        <div class="panel">
+          <h2>Upload a video</h2>
+          <p class="hint">MP4, WebM, OGG, MOV, M4V or MKV. Up to 512 MB.</p>
+
+          <form id="video-form">
+            <div class="field">
+              <label for="v-file">Video file</label>
+              <input class="input" id="v-file" type="file" name="video" accept="video/*" required>
+            </div>
+
+            <div class="field">
+              <label for="v-title">Title</label>
+              <input class="input" id="v-title" name="title" maxlength="200" required>
+            </div>
+
+            <div class="field">
+              <label for="v-desc">Description</label>
+              <textarea class="textarea" id="v-desc" name="description" maxlength="4000"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="v-cat">Category</label>
+                <input class="input" id="v-cat" name="category" placeholder="e.g. Travel" maxlength="80">
+              </div>
+              <div class="field">
+                <label for="v-thumb">Thumbnail (optional)</label>
+                <input class="input" id="v-thumb" type="file" name="thumbnail" accept="image/*">
+              </div>
+            </div>
+
+            <div class="field">
+              <label style="display:flex;align-items:center;gap:10px;font-weight:500">
+                <input type="checkbox" name="published" checked>
+                Publish immediately
+              </label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Publish video</button>
+
+            <div class="progress" id="video-progress"><span></span></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ---------------- Photo upload ---------------- -->
+      <section class="tab-panel" data-panel="photos" style="display:none">
+        <div class="panel">
+          <h2>Upload photos</h2>
+          <p class="hint">JPG, PNG, WebP, GIF or AVIF. Up to 25 MB each, 20 at a time.</p>
+
+          <form id="photo-form">
+            <div class="field">
+              <label for="photo-input">Select photographs</label>
+              <input class="input" id="photo-input" type="file" accept="image/*" multiple>
+            </div>
+
+            <div class="photo-list" id="photo-list"></div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="p-cat">Default category</label>
+                <input class="input" id="p-cat" name="category" placeholder="e.g. Nature" maxlength="80">
+              </div>
+              <div class="field" style="display:flex;align-items:flex-end">
+                <label style="display:flex;align-items:center;gap:10px;font-weight:500">
+                  <input type="checkbox" name="published" checked>
+                  Publish immediately
+                </label>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Publish photos</button>
+
+            <div class="progress" id="photo-progress"><span></span></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ---------------- Library ---------------- -->
+      <section class="tab-panel" data-panel="library" style="display:none">
+        <div class="panel">
+          <h2>Manage library</h2>
+          <p class="hint">Edit details, toggle visibility, or delete files permanently.</p>
+
+          <div class="table-wrap">
+            <table class="media-table">
+              <thead>
+                <tr>
+                  <th>Preview</th>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="media-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Edit dialog -->
+  <dialog id="edit-dialog">
+    <form id="edit-form" method="dialog">
+      <h2>Edit media</h2>
+
+      <div class="field">
+        <label for="e-title">Title</label>
+        <input class="input" id="e-title" name="e_title" maxlength="200" required>
+      </div>
+
+      <div class="field">
+        <label for="e-description">Description</label>
+        <textarea class="textarea" id="e-description" name="e_description" maxlength="4000"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="e-category">Category</label>
+        <input class="input" id="e-category" name="e_category" maxlength="80">
+      </div>
+
+      <div class="field">
+        <label style="display:flex;align-items:center;gap:10px;font-weight:500">
+          <input type="checkbox" name="e_published" id="e-published">
+          Published
+        </label>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="edit-cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

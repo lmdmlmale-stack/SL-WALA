@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Viewer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="viewer">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/"><span class="dot"></span> Gallery</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/videos">Videos</a>
+        <a href="/photos">Photos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="viewer-wrap">
+      <div>
+        <div class="player" id="stage"></div>
+        <div class="viewer-meta" id="meta"></div>
+      </div>
+      <aside>
+        <div class="section-title" style="margin-top:0"><h2>More like this</h2></div>
+        <div class="side-list" id="side-list"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Local media gallery &middot; All content stored on this machine
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Videos</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="videos">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/"><span class="dot"></span> Gallery</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/videos">Videos</a>
+        <a href="/photos">Photos</a>
+      </nav>
+      <div class="search">
+        <input type="search" id="page-search" placeholder="Search videos…" aria-label="Search videos">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Videos</h1>
+      <p>Every published video in the library.</p>
+    </div>
+
+    <div class="chips" id="categories"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    Local media gallery &middot; All content stored on this machine
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/gallery.js"></script>
+</body>
+</html>

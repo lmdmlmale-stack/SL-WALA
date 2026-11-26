@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age Confirmation</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="gate">
+    <div class="gate-card">
+      <span class="badge-lg">18+</span>
+      <h1>Age Confirmation</h1>
+      <p>
+        This site contains media intended for adults. Please confirm that you are
+        at least 18 years old to continue.
+      </p>
+
+      <div class="gate-actions">
+        <button class="btn btn-primary" id="enter">I am 18 or older — Enter</button>
+        <button class="btn" id="exit">I am under 18 — Exit</button>
+      </div>
+
+      <p class="hint" style="margin-top:22px">
+        This is a self-declaration screen, not legal age verification.
+      </p>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('enter').addEventListener('click', async () => {
+      try {
+        await fetch('/api/age/confirm', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ adult: true })
+        });
+        window.location.href = '/';
+      } catch (_) {
+        window.location.reload();
+      }
+    });
+
+    document.getElementById('exit').addEventListener('click', () => {
+      document.body.innerHTML =
+        '<main class="gate"><div class="gate-card">' +
+        '<h1>Access denied</h1>' +
+        '<p>You must be 18 or older to view this site. You may close this tab.</p>' +
+        '</div></main>';
+    });
+  </script>
+</body>
+</html>
